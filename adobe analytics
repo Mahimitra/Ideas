@@ -1,0 +1,150 @@
+
+
+CNAME SETUP : 
+
+https://experienceleague.adobe.com/docs/core-services/interface/ec-cookies/cookies-first-party.html#ec-cookies
+https://uk.godaddy.com/help/add-a-cname-record-19236
+
+
+
+1.ECID is stored in and code( _satellite.getVisitorId().getMarketingCloudVisitorID();) , MCID : concept in backend
+2.Visits,Visitors,unique visitor - when a user is considered as a new visitor
+
+https://experienceleague.adobe.com/docs/analytics/components/metrics/visits.html?lang=en#how-this-metric-is-calculated
+
+visit : 
+
+30 minutes of inactivity: Almost all sessions end in this manner. If more than 30 minutes lapse between hits, a new visit begins.
+12 hours of activity: If a user consistently fires image requests without any 30-minute gaps for more than 12 hours, a new visit automatically starts.
+2500 hits: If a user generates a large number of hits without starting a new session, a new visit is counted after 2500 image requests.
+100 hits in 100 seconds: If a visit consists of more than 100 hits that occur in fewer than 100 seconds, the visit automatically ends. This behavior typically indicates bot activity, and this limitation is enforced to help increase report performance.
+
+3.Types of report suites (rollup(aggregated) and gloal report suite)
+4.Storage duration of DL data element (None, pageview,session,visitor)
+5.types of data elements 
+(custom code,JS variable,Dom attribute,cookie,local storage,page info,
+query string parameter,random number,session storage,visit number)
+6.product syntax,conversion syntax
+(// Place on the same or previous page before the binding event:
+ s.eVar1 = "Aviary";
+
+ // Place on the page where the binding event occurs:
+ s.events = "prodView";
+ s.products = "Birds;Canary";)
+7.list vars,evars,props,events
+8.allocation- most recent,original n linear,expiration - many for Variables in report suites
+9.counter evar vs events
+
+For the travel industry, the question would be: how many flight searches do people do before they book?
+
+https://webanalyticsfordevelopers.com/2014/10/21/counter-evars/#:~:text=A%20Counter%20eVar%20works%20just,will%20do%20it%20for%20you.
+
+
+10.transaction ID - event serialization
+11.Async vs sync
+
+synchronous code is executed in sequence – each statement waits for the previous statement to finish before executing. Asynchronous code doesn’t have to wait – your program can continue to run. You do this to keep your site or app responsive, reducing waiting time for the user.
+
+12.Mousedown,mouseup events
+13.Visualizations
+14.How many Libraries can be at a time in dev(many) or staging(1)
+15.classifications - A classification is a way of categorizing Analytics variable data.
+16.dimensions vs Metrics
+Throughout most reports, metrics are the quantitative measurements of data and dimensions are the labels used to describe them—
+
+17.Conversion vs traffic(why traffic)
+18.Debugging tools
+19.datalayer - A data layer is a JavaScript object that is used to pass information from your website to your Tag Manager container.
+20.GA vs AA 
+storage - AA high
+realtime data in GA
+PII
+
+----launch vs dtm
+environments- any vs prod,stg
+async,sync vs only sync
+extensions vs customcode
+multiple events vs single event
+SPA support vs ---
+
+--- dom ready,window loaded,pagebottom,pagetop
+21.Processing rules
+
+22.block internal traffic
+
+23.Campaingn,marketing channels(reports,definitions)
+Marketing Channels are commonly used to provide insight on how (through which channel) visitors arrive on your site. ---display,email,organic,paid search,social
+
+24.Refferer report vs refferrer domain report(definition of both)
+25. capture click of this page in next page.
+26. clicks on ajax site
+27.Merchandising evars
+Merchandising eVars let you assign the current value of an eVar to a product at the time a success event takes place. This value remains tied to that product, even if one or more new values are later set for that particular eVar.
+
+
+28.at.js	
+29.do Plugins
+30. More unique vistors in motnh of jan but revenue is low,how would u explain to client
+31. evar0
+32.GDPR policy
+33. Activity Map
+34. no. of page vies in RS 
+35. sitesection vs pagename
+36.Standard events in AA
+37.various expiry options for evar
+38.bounce rate vs exit rate
+.... url with more than 300 bytes an then there's utm paramteres...will they get captured
+39.SPA - 
+40. event serialization - Event serialization is the process of implementing measures to prevent duplicate events from entering Analytics reporting.
+41.best practices in launch
+
+42. data-cfasync = false - to stop async load of  script on page
+43. UTM- source,campaingn,medium
+
+
+global variables on click rules also: 
+
+
+1-Day Active Users: the number of unique users who initiated sessions on your site or app on January 28 (the last day of your date range)
+7-Day Active Users: the number of unique users who initiated sessions on your site or app from January 22 through January 28 (the last 7 days of your date range).
+14-Day Active Users
+28-Day Active Users
+
+
+cookie vs local storage
+Get vs Post 
+
+
+
+
+basic metrics : scOpen,prodview,scadd,scremove,scCheckout,scView,purchase.
+
+s.campaign-255 bytes
+s.channel-100
+evar-255
+prop-100
+list Var-255 for each value..max of 20 values per visitor
+s.pageName-100
+
+DL-None,pageview,session,visitor.
+
+
+
+marketin channels  : 
+
+Channel names can't be deleted once created so only create that ll be used but can rename.
+make sure all rulesthat apply have been checked under enabled.
+uncheck override last touch option for direct n internal/session refresh.
+as rules follow waterfall model define them  in order that u need them to be processed.
+
+adobe's recommended order : paid search,natural search,display,email,affliates,other capmaigns,social,internal,direct,referring domain
+
+
+
+primary n secondary calls
+
+
+
+first party cookie request form - ticket raise
+adobe give - 2 cname records-configure dns server
+then adobe willll take digitalcert n give tracking servers
